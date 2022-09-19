@@ -58,4 +58,20 @@
 
 5. En se retirant les permissions de lecture tout en étant dans le dossier, il devient impossible de lister le contenu du répertoire. En revanche on peux l'exécuter, sans avoir accès à son contenu.
 
-6. 
+6. On retire les droits d'écriture avec la commande `sudo chmod 555 /home/test` et `sudo chmod 555 /home/test/nouveau` et il devient alors impossible de l'éditer. Même en rétablissant les permissions sur le répertoire, cela ne change rien, on ne peut toujours pas éditer le fichier "nouveau". On peut alors supprimer le fichier, mais l'invite à néanmoins besoin d'une confirmation. 
+
+7. On peut essayer d'accéder au fichier test lorsque l'on en a retiré les permissions d'exécution. On ne peut ni créer, ni supprimer ni éditer de fichier. On ne peut pas non plus se déplacer dans le répertoire. En revanche on peut en lister le contenu, mais sans voir les permissions.
+
+8. En retablissant les droits du répertoire, se déplaçant dedans puis retirant à nouveau les droits d'exécutions, les remarques sont les mêmes. En revanche, on peut toujours revenir au répertoire parent grâce à `cd ..` sinon on serait bloqué dans le dossier.
+
+9. La commande à entrer pour avoir qu'un utilisateur du groupe puisse avoir accès en lecture au fichier "fichier" est `sudo chmod 750 /home/test/fichier`
+
+10. 
+
+11. 
+
+12. 
+
+13. 
+
+14. 
