@@ -66,12 +66,16 @@
 
 9. La commande à entrer pour avoir qu'un utilisateur du groupe puisse avoir accès en lecture au fichier "fichier" est `sudo chmod 750 /home/test/fichier`
 
-10. 
+10. Afin d'avoir un umask très restrictif pour les autres sauf l'utilisateur, il faut exécuter la commande `umask 077`
 
-11. 
+11. Pour avoir un umask permissif, donnant le droit en lecture et exécution à tous, mais seulement nous en écriture, il faut entrer la commande `umask 022`
 
-12. 
+12. Pour un masque équilibré, qui nous donne un accès complet, ainsi qu'un accès en lecture au groupe, il faut entrer un umask comme ceci : `umask 027`
 
-13. 
+13. On cherche à transcrire les commandes suivantes 
+- chmod u=rx,g=wx,o=r fic --> `chmod 534 r-x-wxr--`
+- chmod uo+w,g-rx fic en sachant que les droits initiaux de fic sont r--r-x--- -> `chmod 602 rw-----w-`
+- chmod 653 fic en sachant que les droits initiaux de fic sont 711 `rw-r-x-wx`
+- chmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x--- `chmod 520 r-x-w----`
 
-14. 
+14. Avec la commande `ll /etc/passwd` on obtient les permissions du fichier qui sont les suivantes : `-rw-r--r--` soit `chmod 644`
